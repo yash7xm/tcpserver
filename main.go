@@ -11,5 +11,12 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	log.Println(listener)
+	log.Println("waiting for client to connect")
+	conn, err := listener.Accept()
+
+	if err != nil {
+		log.Fatal(err)
+	}
+	log.Println(conn)
+	log.Println("client connected")
 }
